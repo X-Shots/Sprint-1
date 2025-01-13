@@ -1,0 +1,79 @@
+#include <iostream>
+using namespace std;
+
+//Methods for the FourFunction class
+class FourFunction{
+    public:
+        double add(double a, double b){
+            return a + b;
+        }
+        double subtract(double a, double b){
+            return a - b;
+        }
+        double multiply(double a, double b){
+            return a * b;
+        }
+        double divide(double a, double b){
+            return a / b;
+        }
+};
+
+//Main Method
+int main() {         
+    //Variables for User Input and Calculations
+    int UserInput;
+    double a;
+    double b;
+    double ans = 1;
+    //Initialize an object of the FourFunction class named "calc"
+    FourFunction calc;
+    //Welcome text
+    cout << "Welcome to the Four Function Calculator! ";
+    cout << "\n";
+    //User Input for starting value
+    cout << "What number would you like to start with? ";
+    cin >> ans;
+    cout << "\n";
+    //Loops to allow the user to make as many calculations as they want using the FourFunction class
+    do{
+        //displays the current value and asks which function to use
+        cout << "The current number is: " << ans << "\n\n";
+        cout << "The four functions are: ";
+        cout << "\n\t1. Addition\n\t2. Subtraction\n\t3. Multiplication\n\t4. Division\n";
+        cout << "\nWhat is the number of the function you would like to use?(Type 0 to quit) ";
+        cin >>   UserInput;
+        cout << "\n";
+        // Asks the user for the second number and calculates the answer based on the user input
+        if (UserInput == 1){
+            cout<< "How much would you like to add? ";
+            cin >> b;
+            ans = calc.add(ans,b);
+        }
+        else if (UserInput == 2){
+            cout << "How much would you like to subtract? ";
+            cin >> b;
+            ans = calc.subtract(ans,b);
+        }
+        else if(UserInput == 3){
+            cout << "How much would you like to multiply by? ";
+            cin >> b;
+            ans = calc.multiply(ans,b);
+        }
+        else if(UserInput == 4){
+            cout << "How much would you like to divide by? ";
+            cin >> b;
+            ans = calc.divide(ans,b);
+        }
+        else if(UserInput == 0){
+            cout << "Goodbye!";
+        }
+        //Error message for invalid input(Program loops back to allow the user to continue calculating)
+        else{
+            cout <<"Invalid input please try again!";
+        }
+        cout << "\n";
+    }while(UserInput != 0);
+    
+    return 0;
+}
+
