@@ -1,5 +1,7 @@
 #include <iostream>
 using namespace std;
+
+//Methods for the FourFunction class
 class FourFunction{
     public:
         int add(int a, int b){
@@ -16,13 +18,16 @@ class FourFunction{
         }
 };
 
-
+//Main Method
 int main() {         
+    //Variables for User Input and Calculations
     int UserInput;
     int a;
     int b;
     int ans = 1;
+    //Initialize an object of the FourFunction class named "calc"
     FourFunction calc;
+    //User Input for the calculation
     cout << "Welcome to the Four Function Calculator!\n\nThe Four Functions are:\n ";
     cout << "\n\t1. Addition\n\t2. Subtraction\n\t3. Multiplication\n\t4. Division";
     cout << "\nWhat is the number of the function you would like to use?";
@@ -32,6 +37,7 @@ int main() {
     cout <<"\nWhat is the seccond number? ";
     cin >> b;
     cout << "\nThe answer is: ";
+    //Calculate the answer based on the user input
     if (UserInput == 1){
         ans = calc.add(a,b);
     }
@@ -47,6 +53,7 @@ int main() {
     else{
         cout <<"Invalid input please try again!";
     }
+    //Print the calculated answer
     cout << ans;
     cout << "\n";
     return 0;
