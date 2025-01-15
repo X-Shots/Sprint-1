@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+#include <cmath>
 
 //Methods for the FourFunction class
 class FourFunction{
@@ -15,6 +16,12 @@ class FourFunction{
         }
         double divide(double a, double b){
             return a / b;
+        }
+        double exponent(double a, double b){
+            return pow(a,b);
+        }
+         double squareRoot(double ans){
+             return sqrt(ans);
         }
 };
 
@@ -39,7 +46,7 @@ int main() {
         //displays the current value and asks which function to use
         cout << "The current number is: " << ans << "\n\n";
         cout << "The four functions are: ";
-        cout << "\n\t1. Addition\n\t2. Subtraction\n\t3. Multiplication\n\t4. Division\n";
+        cout << "\n\t1. Addition\n\t2. Subtraction\n\t3. Multiplication\n\t4. Division\n\t5. Exponent\n\t6. Square root\n";
         cout << "\nWhat is the number of the function you would like to use?(Type 0 to quit) ";
         cin >>   UserInput;
         cout << "\n";
@@ -64,6 +71,16 @@ int main() {
             cin >> b;
             ans = calc.divide(ans,b);
         }
+        else if(UserInput == 5){
+            cout << "What is the exponent? ";
+            cin >> b;
+            ans = calc.exponent(ans,b);
+        }
+        else if(UserInput == 6){
+            ans = calc.squareRoot(ans);
+        }
+
+        // Input for user to exit program
         else if(UserInput == 0){
             cout << "Goodbye!";
         }
