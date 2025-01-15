@@ -20,8 +20,11 @@ class FourFunction{
         double exponent(double a, double b){
             return pow(a,b);
         }
-         double squareRoot(double ans){
+        double squareRoot(double ans){
              return sqrt(ans);
+        }
+        double cos(double ans){
+            return cos(ans);
         }
 };
 
@@ -46,7 +49,7 @@ int main() {
         //displays the current value and asks which function to use
         cout << "The current number is: " << ans << "\n\n";
         cout << "The four functions are: ";
-        cout << "\n\t1. Addition\n\t2. Subtraction\n\t3. Multiplication\n\t4. Division\n\t5. Exponent\n\t6. Square root\n";
+        cout << "\n\t1. Addition\n\t2. Subtraction\n\t3. Multiplication\n\t4. Division\n\t5. Exponent\n\t6. Square root\n\t7. cos";
         cout << "\nWhat is the number of the function you would like to use?(Type 0 to quit) ";
         cin >>   UserInput;
         cout << "\n";
@@ -78,6 +81,9 @@ int main() {
         }
         else if(UserInput == 6){
             ans = calc.squareRoot(ans);
+        }
+        else if(UserInput == 7){
+            ans = calc.cos(ans);
         }
 
         // Input for user to exit program
