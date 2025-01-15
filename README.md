@@ -24,6 +24,7 @@
 - [C++ Classes and Objects](https://www.w3schools.com/cpp/cpp_classes.asp)
 - [C++ Math Functions](hhttps://www.w3schools.com/cpp/cpp_ref_math.asp)
 - [C++ User Input]("https://www.w3schools.com/cpp/cpp_user_input.asp")
+- [Convert Infix expression to Postfix expression]("https://www.geeksforgeeks.org/convert-infix-expression-to-postfix-expression/")
 
 # Future Work
 
