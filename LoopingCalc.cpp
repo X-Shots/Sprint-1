@@ -17,9 +17,7 @@ class FourFunction{
         double divide(double a, double b){
             return a / b;
         }
-<<<<<<< HEAD
         
-=======
         double exponent(double a, double b){
             return pow(a,b);
         }
@@ -29,7 +27,6 @@ class FourFunction{
         double cos(double ans){
             return cos(ans);
         }
->>>>>>> b3a4b1dd1b0921141604bb9866648dacd0904a44
 };
 
 //Main Method
