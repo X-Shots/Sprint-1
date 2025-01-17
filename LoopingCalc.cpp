@@ -33,12 +33,22 @@ class FourFunction{
         double tangent(double ans){
             return tan(ans);
         }
+        double secant(double ans){
+            return 1 / cos(ans);
+        }
+        double cosecant(double ans){
+            return 1 / sin(ans);
+        }
+        double cotangent(double ans){
+            return 1 / tan(ans);
+        }
         double log(double ans){
             return log(ans);
         }
         double log10(double ans){
             return log10(ans);
         }
+        // double pi = 2 * acos(0.0);
 };
 
 //Main Method
@@ -62,7 +72,7 @@ int main() {
         //displays the current value and asks which function to use
         cout << "The current number is: " << ans << "\n\n";
         cout << "The four functions are: ";
-        cout << "\n\t1. Addition\n\t2. Subtraction\n\t3. Multiplication\n\t4. Division\n\t5. Exponent\n\t6. Square Root\n\t7. Cosine\n\t8. Log\n\t9. Log 10\n\t10. Sin\n\t11. Tan";
+        cout << "\n\t1. Addition\n\t2. Subtraction\n\t3. Multiplication\n\t4. Division\n\t5. Exponent\n\t6. Square Root\n\t7. cos\n\t8. Log\n\t9. Log 10\n\t10. sin\n\t11. tan\n\t12. sec\n\t13. csc\n\t14. cot\n\t15. PI";
         cout << "\nWhat is the number of the function you would like to use?(Type 0 to quit) ";
         cin >>   UserInput;
         cout << "\n";
@@ -110,6 +120,18 @@ int main() {
         else if(UserInput == 11){
             ans = calc.tangent(ans);
         }
+        else if(UserInput == 12){
+            ans = calc.secant(ans);
+        }
+        else if(UserInput == 13){
+            ans = calc.cosecant(ans);
+        }
+        else if(UserInput == 14){
+            ans = calc.cotangent(ans);
+        }
+        // else if(UserInput == 15){
+        //     ans = calc.pi()
+        // }
 
         // Input for user to exit program
         else if(UserInput == 0){
