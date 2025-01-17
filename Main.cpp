@@ -36,7 +36,7 @@ int main() {
     FourFunction calc;
     //User Input for the calculation
     cout << "Welcome to the Four Function Calculator!\n\nThe Four Functions are:\n ";
-    cout << "\n\t1. Addition\n\t2. Subtraction\n\t3. Multiplication\n\t4. Division\n\t5. Squared\n\t6. Square Root";
+    cout << "\n\t1. Addition\n\t2. Subtraction\n\t3. Multiplication\n\t4. Division\n\t5. Squared\n\t6. Square Root\n\t7. Log\n\t7. Log 10";
     cout << "\nWhat is the number of the function you would like to use?";
     cin >>   UserInput;
     cout <<"\nWhat is the first number? ";
@@ -62,6 +62,12 @@ int main() {
     }
     else if(UserInput == 6){
         ans = calc.squareRoot(a);
+    }
+    else if(UserInput == 7){
+        ans = log(a);
+    }
+    else if(UserInput == 8){
+        ans = log10(a);
     }
     else{
         cout <<"Invalid input please try again!";
