@@ -17,6 +17,7 @@ class FourFunction{
         double divide(double a, double b){
             return a / b;
         }
+        
         double exponent(double a, double b){
             return pow(a,b);
         }
@@ -26,11 +27,11 @@ class FourFunction{
         double cosine(double ans){
             return cos(ans);
         }
-        double sine(double ans){
         double log(double ans){
             return log(ans);
         }
-            return tan(ans);
+        double log10(double ans){
+            return log10(ans);
         }
 };
 
@@ -92,7 +93,6 @@ int main() {
             ans = calc.cosine(ans);
         }
         else if(UserInput == 8){
-            ans = calc.sine(ans);
             ans = calc.log(ans);
         }
         else if(UserInput == 9){
