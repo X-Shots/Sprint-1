@@ -27,6 +27,13 @@ class FourFunction{
         double cos(double ans){
             return cos(ans);
         }
+
+        double log(double ans){
+            return log(ans);
+        }
+        double log10(double ans){
+            return log10(ans);
+        }
 };
 
 //Main Method
@@ -50,7 +57,7 @@ int main() {
         //displays the current value and asks which function to use
         cout << "The current number is: " << ans << "\n\n";
         cout << "The four functions are: ";
-        cout << "\n\t1. Addition\n\t2. Subtraction\n\t3. Multiplication\n\t4. Division\n\t5. Exponent\n\t6. Square root\n\t7. cos";
+        cout << "\n\t1. Addition\n\t2. Subtraction\n\t3. Multiplication\n\t4. Division\n\t5. Exponent\n\t6. Square Root\n\t7. Cosine\n\t8. Log\n\t9. Log 10";
         cout << "\nWhat is the number of the function you would like to use?(Type 0 to quit) ";
         cin >>   UserInput;
         cout << "\n";
@@ -85,6 +92,12 @@ int main() {
         }
         else if(UserInput == 7){
             ans = calc.cos(ans);
+        }
+        else if(UserInput == 8){
+            ans = calc.log(ans);
+        }
+        else if(UserInput == 9){
+            ans = calc.log10(ans);
         }
 
         // Input for user to exit program
