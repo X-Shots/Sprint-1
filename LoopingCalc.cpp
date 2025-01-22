@@ -3,7 +3,7 @@ using namespace std;
 #include <cmath>
 
 //Methods for the FourFunction class
-class FourFunction{
+class MathFunction{
     public:
         double add(double a, double b){
             return a + b;
@@ -62,7 +62,7 @@ int main() {
     double b;
     double ans = 1;
     //Initialize an object of the FourFunction class named "calc"
-    FourFunction calc;
+    MathFunction calc;
     //Welcome text
     cout << "Welcome to the Four Function Calculator! ";
     cout << "\n";
