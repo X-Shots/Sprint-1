@@ -24,11 +24,17 @@ class FourFunction{
         double squareRoot(double ans){
              return sqrt(ans);
         }
-        double cosine(double ans){
-            return cos(ans);
+        double log(double ans){
+            return log(ans);
+        }
+        double log10(double ans){
+            return log10(ans);
         }
         double sine(double ans){
             return sin(ans);
+        }
+        double cosine(double ans){
+            return cos(ans);
         }
         double tangent(double ans){
             return tan(ans);
@@ -42,13 +48,10 @@ class FourFunction{
         double cotangent(double ans){
             return 1 / tan(ans);
         }
-        double log(double ans){
-            return log(ans);
-        }
-        double log10(double ans){
-            return log10(ans);
-        }
         // double pi = 2 * acos(0.0);
+        double remainder(double a, double b){
+            return remainder(a, b);
+        }
 };
 
 //Main Method
@@ -72,7 +75,7 @@ int main() {
         //displays the current value and asks which function to use
         cout << "The current number is: " << ans << "\n\n";
         cout << "The four functions are: ";
-        cout << "\n\t1. Addition\n\t2. Subtraction\n\t3. Multiplication\n\t4. Division\n\t5. Exponent\n\t6. Square Root\n\t7. cos\n\t8. Log\n\t9. Log 10\n\t10. sin\n\t11. tan\n\t12. sec\n\t13. csc\n\t14. cot\n\t15. PI";
+        cout << "\n\t1. Addition\n\t2. Subtraction\n\t3. Multiplication\n\t4. Division\n\t5. Exponent\n\t6. Square Root\n\t7. Log\n\t8. Log 10\n\t9. sin\n\t10. cos\n\t11. tan\n\t12. sec\n\t13. csc\n\t14. cot\n\t15. PI\n\t16. Remainder";
         cout << "\nWhat is the number of the function you would like to use?(Type 0 to quit) ";
         cin >>   UserInput;
         cout << "\n";
@@ -106,16 +109,16 @@ int main() {
             ans = calc.squareRoot(ans);
         }
         else if(UserInput == 7){
-            ans = calc.cosine(ans);
-        }
-        else if(UserInput == 8){
             ans = calc.log(ans);
         }
-        else if(UserInput == 9){
+        else if(UserInput == 8){
             ans = calc.log10(ans);
         }
-        else if (UserInput == 10){
+        else if (UserInput == 9){
             ans = calc.sine(ans);
+        }
+        else if(UserInput == 10){
+            ans = calc.cosine(ans);
         }
         else if(UserInput == 11){
             ans = calc.tangent(ans);
@@ -132,6 +135,9 @@ int main() {
         // else if(UserInput == 15){
         //     ans = calc.pi()
         // }
+        else if(UserInput == 16){
+            ans = calc.remainder(ans, b);
+        }
 
         // Input for user to exit program
         else if(UserInput == 0){
