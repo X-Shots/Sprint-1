@@ -11,12 +11,20 @@ using namespace std;
 bool isOperand(char c){
     return isdigit(c);
 }
+bool isFunction(string s){
+    return s == "sin" || s == "cos" || s == "tan" || s == "log" || s == "sqrt";
+}
 //returns true if the character is an operator
 bool isOperator(char c){
     return c == '+' || c == '-' || c == '*' || c == '/' || c == '^';
 }
+
 //returns the precedence of the operator
-int precedence(char c){
+int precedence(string c){
+    c = c.trim();
+    if(c == "sin" || c == "cos" || c == "tan" || c == "log" || c == "sqrt"){
+        return 4;
+    }
     if(c == '^'){
         return 3;
     }
@@ -35,11 +43,23 @@ vector<string> toPostfix(string infix){
     stack<char> operators;
     vector<string> postfix;
     string number;
-
-    for (char c : infix){
+    string function;
+    for (int i = 0; i < infix.length(); ++i){
+        char c = infix[i];
+        //method to check for and account for functions like sin tan and log
         
+        if(isalpha(c)){
+            function += c;
+            if(!isalpha(infix[i+1])){
+                isFunction(function){
+                    operators.push(function);
+                }
+                function.clear();
+            }
+        }
+
         //if the character is a number, add it to the postfix expression
-        if(isOperand(c)){
+        else if(isOperand(c)){
             number += c;
         } else{
             if(!number.empty()){
@@ -95,6 +115,22 @@ vector<string> toPostfix(string infix){
 double postfixToNumerical(vector<string> postfix){
     stack <double> numbers;
     for (string s : postfix){
+        if (isdigit(s[0]) || (s[0] == '-' && s.size() > 1)) { // Handle negative numbers
+            numbers.push(stod(s));
+        } else if (isFunction(s)) {
+            double a = numbers.top();
+            numbers.pop();
+            if (s == "sin") {
+                numbers.push(sin(a)); // a in radians
+            } else if (s == "cos") {
+                numbers.push(cos(a));
+            } else if (s == "tan") {
+                numbers.push(tan(a));
+            } else if (s == "log") {
+                numbers.push(log(a));
+            } else if (s == "sqrt") {
+                numbers.push(sqrt(a));
+            }
         if(isOperand(s[0])){
             numbers.push(stod(s));
         }
