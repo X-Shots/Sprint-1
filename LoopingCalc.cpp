@@ -58,6 +58,9 @@ class MathFunction{
         double tip(double a, double b){
             return (a / 100) * b;
         }
+        double discount(double a, double b){
+            return a - (a * (b / 100));
+        }
 };
 
 //Main Method
@@ -81,7 +84,7 @@ int main() {
         //displays the current value and asks which function to use
         cout << "The current number is: " << ans << "\n\n";
         cout << "The four functions are: ";
-        cout << "\n\t1. Addition\n\t2. Subtraction\n\t3. Multiplication\n\t4. Division\n\t5. Exponent\n\t6. Square Root\n\t7. Log\n\t8. Log 10\n\t9. sin\n\t10. cos\n\t11. tan\n\t12. sec\n\t13. csc\n\t14. cot\n\t15. PI\n\t16. Remainder\n\t17. Tithing\n\t18. Calculate tip";
+        cout << "\n\t1. Addition\n\t2. Subtraction\n\t3. Multiplication\n\t4. Division\n\t5. Exponent\n\t6. Square Root\n\t7. Log\n\t8. Log 10\n\t9. sin\n\t10. cos\n\t11. tan\n\t12. sec\n\t13. csc\n\t14. cot\n\t15. PI\n\t16. Remainder\n\t17. Tithing\n\t18. Calculate tip\n\t19. Discount";
         cout << "\nWhat is the number of the function you would like to use?(Type 0 to quit) ";
         cin >>   UserInput;
         cout << "\n";
@@ -149,9 +152,14 @@ int main() {
             ans = calc.tithing(ans);
         }
         else if(UserInput == 18){
-            cout << "What '%' do you want to tip? ";
+            cout << "What percent do you want to tip? ";
             cin >> b;
             ans = calc.tip(ans,b);
+        }
+        else if(UserInput == 19){
+            cout << "What is the percentage of the discount? ";
+            cin >> b;
+            ans = calc.discount(ans,b);
         }
 
         // Input for user to exit program
