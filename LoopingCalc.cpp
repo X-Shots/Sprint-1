@@ -39,6 +39,9 @@ class FourFunction{
         double log10(double ans){
             return log10(ans);
         }
+        double remainder(double a, double b){
+            return remainder(a, b);
+        }
 };
 
 //Main Method
@@ -62,7 +65,7 @@ int main() {
         //displays the current value and asks which function to use
         cout << "The current number is: " << ans << "\n\n";
         cout << "The four functions are: ";
-        cout << "\n\t1. Addition\n\t2. Subtraction\n\t3. Multiplication\n\t4. Division\n\t5. Exponent\n\t6. Square Root\n\t7. Cosine\n\t8. Log\n\t9. Log 10\n\t10. Sin\n\t11. Tan";
+        cout << "\n\t1. Addition\n\t2. Subtraction\n\t3. Multiplication\n\t4. Division\n\t5. Exponent\n\t6. Square Root\n\t7. Cosine\n\t8. Log\n\t9. Log 10\n\t10. Sine\n\t11. Tangent\n\t12. Remainder";
         cout << "\nWhat is the number of the function you would like to use?(Type 0 to quit) ";
         cin >>   UserInput;
         cout << "\n";
@@ -109,6 +112,9 @@ int main() {
         }
         else if(UserInput == 11){
             ans = calc.tangent(ans);
+        }
+        else if(UserInput == 12){
+            ans = calc.remainder(ans, b);
         }
 
         // Input for user to exit program
