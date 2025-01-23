@@ -7,6 +7,9 @@
 #include <vector>
 
 using namespace std;
+double degreeToRadian(double degree) {
+    return degree * M_PI / 180;
+}
 //returns true if the character is a number
 bool isOperand(char c){
     return isdigit(c);
@@ -117,18 +120,16 @@ double postfixToNumerical(vector<string> postfix){
             double a = numbers.top();
             numbers.pop();
             if (s == "sin") {
-                numbers.push(sin(a)); // a in radians
+                numbers.push(sin(degreeToRadian(a))); // a in radians
             } else if (s == "cos") {
-                numbers.push(cos(a));
+                numbers.push(cos(degreeToRadian(a)));
             } else if (s == "tan") {
-                numbers.push(tan(a));
+                numbers.push(tan(degreeToRadian(a)));
             } else if (s == "log") {
                 numbers.push(log(a));
             } else if (s == "sqrt") {
                 numbers.push(sqrt(a));
             }
-        if(isOperand(s[0])){
-            numbers.push(stod(s));
         }
         else{
             double b = numbers.top();
@@ -153,17 +154,18 @@ double postfixToNumerical(vector<string> postfix){
         }
     }
     return numbers.top();
-}}
+}
 
 
 int main(){
     string infix;
     cout << "Enter an infix expression: ";
     getline(cin, infix);;
+    cout << "Postfix expression: ";
     vector<string> postfix = toPostfix(infix);
     for(string in : postfix){
         cout << in << " ";
     }
-    cout << "Postfix expression: "<< postfixToNumerical(postfix) << endl;
+    cout << "Numerical expression: "<< postfixToNumerical(postfix) << endl;
     return 0;
 }
