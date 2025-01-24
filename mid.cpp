@@ -7,39 +7,58 @@
 #include <vector>
 
 using namespace std;
+double degreeToRadian(double degree) {
+    return degree * M_PI / 180;
+}
 //returns true if the character is a number
 bool isOperand(char c){
     return isdigit(c);
+}
+bool isFunction(const std::string& s) {
+    return s == "sin" || s == "cos" || s == "tan" || s == "log" || s == "sqrt";
 }
 //returns true if the character is an operator
 bool isOperator(char c){
     return c == '+' || c == '-' || c == '*' || c == '/' || c == '^';
 }
+
 //returns the precedence of the operator
-int precedence(char c){
-    if(c == '^'){
+int precedence(const std::string& c) {
+    if (c == "sin" || c == "cos" || c == "tan" || c == "log" || c == "sqrt") {
+        return 4;
+    } else if (c == "^") {
         return 3;
-    }
-    else if(c == '*' || c == '/'){
+    } else if (c == "*" || c == "/") {
         return 2;
-    }
-    else if(c == '+' || c == '-'){
+    } else if (c == "+" || c == "-") {
         return 1;
-    }
-    else{
+    } else {
         return -1;
     }
 }
 //converts infix expression to postfix expression
 vector<string> toPostfix(string infix){
-    stack<char> operators;
+    stack<string> operators;
     vector<string> postfix;
     string number;
-
-    for (char c : infix){
+    string function;
+    for (int i = 0; i < infix.length(); ++i){
+        char c = infix[i];
+        std::string str(1, c);
+        //method to check for and account for functions like sin tan and log
         
+        if(isalpha(c)){
+            function += c;
+            if(!isalpha(infix[i+1])){
+                if(isFunction(function)){
+                    operators.push(function);
+                }
+                function.clear();
+            }
+        }
+
         //if the character is a number, add it to the postfix expression
-        if(isOperand(c)){
+        else if(isOperand(c)){
             number += c;
         } else{
             if(!number.empty()){
@@ -52,26 +71,26 @@ vector<string> toPostfix(string infix){
             }
         //if the character is an operator, check the precedence and add it to the postfix expression accordingly
         else if(isOperator(c)){
-            if(operators.empty() || precedence(c) > precedence(operators.top())||  operators.top() == '('){
-                operators.push(c);
+            if(operators.empty() || precedence(string(1,c)) > precedence(operators.top())||  operators.top() == string(1,'(')){
+                operators.push(string(1,c));
             }
             else{
-                while(!operators.empty() && precedence(c) <= precedence(operators.top())){
-                    postfix.push_back(string(1,operators.top()));
+                while(!operators.empty() && precedence(string(1,c)) <= precedence(operators.top())){
+                    postfix.push_back(operators.top());
                     operators.pop();
                 }
-                operators.push(c);
+                operators.push(string(1,c));
             }
             
         }
         
         //deal with parentheses
         else if(c == '('){
-            operators.push(c);
+            operators.push(string(1,c));
         }
         else if(c == ')'){
-            while(!operators.empty() && operators.top() != '('){
-                postfix.push_back(string(1,operators.top()));
+            while(!operators.empty() && operators.top() != string(1,'(')){
+                postfix.push_back(operators.top());
                 operators.pop();
             }
             operators.pop();
@@ -85,7 +104,7 @@ vector<string> toPostfix(string infix){
     
     //add the remaining operators to the postfix expression
     while (!operators.empty()){
-        postfix.push_back(string(1,operators.top()));
+        postfix.push_back(operators.top());
         operators.pop();
     }
     return postfix;
@@ -95,8 +114,22 @@ vector<string> toPostfix(string infix){
 double postfixToNumerical(vector<string> postfix){
     stack <double> numbers;
     for (string s : postfix){
-        if(isOperand(s[0])){
+        if (isdigit(s[0]) || (s[0] == '-' && s.size() > 1)) { // Handle negative numbers
             numbers.push(stod(s));
+        } else if (isFunction(s)) {
+            double a = numbers.top();
+            numbers.pop();
+            if (s == "sin") {
+                numbers.push(sin(degreeToRadian(a))); // a in radians
+            } else if (s == "cos") {
+                numbers.push(cos(degreeToRadian(a)));
+            } else if (s == "tan") {
+                numbers.push(tan(degreeToRadian(a)));
+            } else if (s == "log") {
+                numbers.push(log(a));
+            } else if (s == "sqrt") {
+                numbers.push(sqrt(a));
+            }
         }
         else{
             double b = numbers.top();
@@ -128,7 +161,11 @@ int main(){
     string infix;
     cout << "Enter an infix expression: ";
     getline(cin, infix);;
+    cout << "Postfix expression: ";
     vector<string> postfix = toPostfix(infix);
-    cout << "Postfix expression: "<< postfixToNumerical(postfix) << endl;
+    for(string in : postfix){
+        cout << in << " ";
+    }
+    cout << "Numerical expression: "<< postfixToNumerical(postfix) << endl;
     return 0;
 }
