@@ -12,19 +12,19 @@
 { We developed this calculator using C++ and the library wxwidgets for the graphical user interface. }
 
 { List of libraries included to the project: }
--#include <wx/wx.h>
--#include <wx/grid.h>
--#include <wx/textctrl.h>
--#include <wx/sizer.h>
--#include <stack>
--#include <string>
--#include <sstream>
--#include <cmath>
--#include <cctype>
--#include <stdexcept>
--#include <iostream>
--#include <map>
--#include <vector>
+- #include <wx/wx.h>
+-   #include <wx/grid.h>
+-   #include <wx/textctrl.h>
+-   #include <wx/sizer.h>
+-   #include <stack>
+-   #include <string>
+-   #include <sstream>
+-   #include <cmath>
+-   #include <cctype>
+-   #include <stdexcept>
+-   #include <iostream>
+-   #include <map>
+-   #include <vector>
 
 
 # Useful Websites
@@ -42,11 +42,8 @@
 
 {Make a list of things that you need to fix, improve, and add in the future.}
 
-<<<<<<< HEAD
 - Add the typing/ order of operations feature to the GUI
 - Add more "Everyday Math" features similar to the tithing button
-=======
 - Add Infix/Postfix to GUI
 - Fix log button
 - Port to a web application
->>>>>>> 5038349b607d27ea255ab795ed81a862000a2a4d
