@@ -16,15 +16,6 @@
 -   #include <wx/grid.h>
 -   #include <wx/textctrl.h>
 -   #include <wx/sizer.h>
--   #include <stack>
--   #include <string>
--   #include <sstream>
--   #include <cmath>
--   #include <cctype>
--   #include <stdexcept>
--   #include <iostream>
--   #include <map>
--   #include <vector> 
 
 
 
