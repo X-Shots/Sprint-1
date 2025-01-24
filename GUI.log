@@ -1,0 +1,6 @@
+﻿  main.cpp
+C:\Users\tylar\OneDrive\Desktop\Sprint1\Sprint1\GUI\main.cpp(494,38): warning C4101: 'e': unreferenced local variable
+C:\Users\tylar\OneDrive\Desktop\Sprint1\Sprint1\GUI\main.cpp(59,1): warning C4717: 'MathFunction::log10': recursive on all control paths, function will cause runtime stack overflow
+C:\Users\tylar\OneDrive\Desktop\Sprint1\Sprint1\GUI\main.cpp(56,1): warning C4717: 'MathFunction::log': recursive on all control paths, function will cause runtime stack overflow
+C:\Users\tylar\OneDrive\Desktop\Sprint1\Sprint1\GUI\main.cpp(81,1): warning C4717: 'MathFunction::remainder': recursive on all control paths, function will cause runtime stack overflow
+  GUI.vcxproj -> C:\Users\tylar\OneDrive\Desktop\Sprint1\Sprint1\GUI\x64\Debug\GUI.exe
