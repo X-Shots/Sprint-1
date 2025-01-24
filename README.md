@@ -1,21 +1,31 @@
 # Overview
 
-{Important! Do not say in this section that this is college assignment. Talk about what you are trying to accomplish as a software engineer to further your learning.}
+{ Our team is trying to create a calculator that can be used by everyone with additional features that "normal" calculators don't have.  }
 
-{Provide a description of the software that you wrote to demonstrate the C++ language.}
+{ We created a calculator that is able to calculate basic functions such as addition, subtraction, multiplication, and division as well as trig functions such as sin, cos, tan, and log. We decided to spice it up by adding a tithing feature, and functions to calculate the tip and discount prices. Lastly, we were able to add a typing feature (not to the gui just to the terminal) where the user can type math problems where the order of operations applies. }
 
-{Describe your purpose for writing this software.}
+{ The purpose of this software is to allow users to execute every day math problems as well as help with calculations that they may not remember how to do.  }
 
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
-
-[Software Demo Video](http://youtube.link.goes.here)
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+{ We developed this calculator using C++ and the library wxwidgets for the graphical user interface. }
 
+{ List of libraries included to the project: }
+-#include <wx/wx.h>
+-#include <wx/grid.h>
+-#include <wx/textctrl.h>
+-#include <wx/sizer.h>
+-#include <stack>
+-#include <string>
+-#include <sstream>
+-#include <cmath>
+-#include <cctype>
+-#include <stdexcept>
+-#include <iostream>
+-#include <map>
+-#include <vector>
 
-{Describe the programming language that you used and any libraries.}
 
 # Useful Websites
 
@@ -26,11 +36,11 @@
 - [C++ User Input](https://www.w3schools.com/cpp/cpp_user_input.asp)
 - [Convert Infix expression to Postfix expression](https://www.geeksforgeeks.org/convert-infix-expression-to-postfix-expression/)
 - [Evaluation of Postfix Expression](https://www.geeksforgeeks.org/evaluation-of-postfix-expression/)
+- [Youtube tutorials about GUI](https://www.youtube.com)
 
 # Future Work
 
 {Make a list of things that you need to fix, improve, and add in the future.}
 
-- Item 1
-- Item 2
-- Item 3
+- Add the typing/ order of operations feature to the GUI
+- Add more "Everyday Math" features similar to the tithing button
