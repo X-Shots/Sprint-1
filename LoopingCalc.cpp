@@ -168,7 +168,7 @@ int main() {
         }
         //Error message for invalid input(Program loops back to allow the user to continue calculating)
         else{
-            cout <<"Invalid input please try again!";
+            cout <<"Invalid input - please try again!";
         }
         cout << "\n";
     }while(UserInput != 0);
