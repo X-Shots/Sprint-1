@@ -155,6 +155,9 @@ double postfixToNumerical(vector<string> postfix){
     }
     return numbers.top();
 }
+double evaluate(string infix){
+    return postfixToNumerical(toPostfix(infix));
+}
 
 
 int main(){
