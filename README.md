@@ -42,5 +42,11 @@
 
 {Make a list of things that you need to fix, improve, and add in the future.}
 
+<<<<<<< HEAD
 - Add the typing/ order of operations feature to the GUI
 - Add more "Everyday Math" features similar to the tithing button
+=======
+- Add Infix/Postfix to GUI
+- Fix log button
+- Port to a web application
+>>>>>>> 5038349b607d27ea255ab795ed81a862000a2a4d
